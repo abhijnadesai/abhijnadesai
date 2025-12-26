@@ -67,11 +67,13 @@ const Navbar = ({ isClicked, toggleNavClick }) => {
           {navigation.map((item) => (
             <li key={item.title} className="inline-block">
               <a
-                className={`relative font-semibold after:absolute after:bottom-[-0.2rem] after:left-0 after:h-[3px] after:w-[20px] after:rounded-xl after:transition-all after:duration-300 after:ease-in hover:after:bg-blue-600 hover:after:w-full ${
-                  activeLink === item.title
-                    ? "text-blue-600 relative after:absolute after:bottom-[-0.2rem] after:bg-blue-600 after:left-0 after:h-[3px] after:w-full after:rounded-xl"
-                    : "text-white"
-                } hover:text-blue-600 transition-colors duration-300 ease-in`}
+                className={`relative font-semibold text-white after:absolute after:bottom-[-0.2rem] after:left-0 after:h-[3px] after:rounded-xl after:transition-all after:duration-300 after:ease-in after:w-[20px] hover:after:w-full hover:after:bg-blue-600
+                  ${
+                    activeLink === item.title
+                      ? "text-blue-600 after:w-full after:bg-blue-600"
+                      : ""
+                  }
+                  hover:text-blue-600 transition-colors duration-300`}
                 href={item.url}
               >
                 {item.title}
